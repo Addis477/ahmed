@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ONEX | Premium Mineral & Gemstone Exporters</title>
-    <meta name="description" content="ONEX Fuorie Ruby, Hemat & Sand Stone - World-class industrial minerals and precious gemstone exporters. Ethiopian opal, ruby, crystal and mineral products.">
-    <meta name="keywords" content="ruby, opal, crystal, hematite, sandstone, industrial minerals, ethiopia, gemstone exporter, Ahmed Nurye">
-    <meta name="author" content="ONEX Minerals">
+    <title>Ahmed Nurye Kibret | Premium Mineral & Gemstone Exporter</title>
+    <meta name="description" content="Ahmed Nurye Kibret - Mineral Products Exporter. World-class industrial minerals and precious gemstone exporter. Ethiopian opal, ruby, crystal and mineral products.">
+    <meta name="keywords" content="ruby, opal, crystal, hematite, sandstone, industrial minerals, ethiopia, gemstone exporter, Ahmed Nurye Kibret">
+    <meta name="author" content="Ahmed Nurye Kibret">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
     
     <style>
         /* ============================================
-           ONEX MINERALS - PREMIUM GEMSTONE THEME
-           Bilingual (Amharic/English) - Production Ready
+           AHMED NURYE KIBRET - MINERAL PRODUCTS EXPORTER
+           Premium Gemstone Theme - Bilingual
            ============================================ */
 
         :root {
@@ -74,13 +74,6 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
             letter-spacing: -0.02em;
-        }
-
-        /* Amharic Text Style */
-        .amharic-text {
-            font-family: 'Segoe UI', 'Noto Sans Ethiopic', 'Abyssinica SIL', 'Nyala', 'Ethiopic', sans-serif;
-            font-weight: normal;
-            letter-spacing: normal;
         }
 
         .section-title {
@@ -160,7 +153,7 @@
             50% { transform: translateY(-30px) rotate(10deg); }
         }
 
-        /* Premium Cards - Glowing Animation */
+        /* Premium Cards */
         .premium-card {
             background: linear-gradient(135deg, rgba(26, 32, 38, 0.9), rgba(18, 22, 28, 0.95));
             backdrop-filter: blur(12px);
@@ -189,12 +182,36 @@
             border-color: var(--gold);
             box-shadow: 0 25px 45px -12px rgba(212, 175, 90, 0.3), 0 0 20px rgba(212, 175, 90, 0.15);
         }
-        .premium-card-ruby {
-            border: 1px solid rgba(192, 57, 43, 0.25);
+
+        /* Gallery Card - Image specific */
+        .gallery-card {
+            background: linear-gradient(135deg, rgba(26, 32, 38, 0.9), rgba(18, 22, 28, 0.95));
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 90, 0.2);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .premium-card-ruby:hover {
-            border-color: var(--ruby-light);
-            box-shadow: 0 25px 45px -12px rgba(192, 57, 43, 0.35);
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 25px 45px -12px rgba(212, 175, 90, 0.3);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+        }
+        .gallery-caption h4 {
+            margin-bottom: 0.25rem;
         }
 
         /* Navigation */
@@ -211,15 +228,16 @@
             border-bottom: 1px solid rgba(212, 175, 90, 0.25);
         }
         .logo h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+            font-weight: 700;
             background: linear-gradient(135deg, var(--gold-light), var(--gold));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .logo p {
-            font-size: 0.65rem;
-            letter-spacing: 2.5px;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
             color: var(--gold);
         }
         .desktop-nav {
@@ -376,7 +394,7 @@
         section { padding: 5rem 0; }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 
         /* Hero */
         .hero {
@@ -466,6 +484,43 @@
             margin-top: 1rem;
         }
 
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 0 50px rgba(212, 175, 90, 0.3);
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: var(--gold);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .close-lightbox:hover {
+            transform: scale(1.1);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container { padding: 0 1.2rem; }
@@ -476,6 +531,7 @@
             .premium-card { padding: 1.5rem; }
             .lang-switch { margin-left: 0.8rem; }
             .lang-btn { padding: 4px 10px; font-size: 0.7rem; }
+            .gallery-img { height: 180px; }
         }
     </style>
 </head>
@@ -488,15 +544,15 @@
 <!-- Navigation -->
 <div class="top-bar">
     <div class="logo">
-        <h1>ONEX<span style="color: var(--ruby);">ፊዎሪ</span></h1>
-        <p class="logo-sub" data-en="RUBY · HEMATITE · SANDSTONE · OPAL" data-am="ሩቢ · ሄማቲት · አሸዋ ድንጋይ · ኦፓል">RUBY · HEMATITE · SANDSTONE · OPAL</p>
+        <h1>Ahmed Nurye <span style="color: var(--gold);">Kibret</span></h1>
+        <p class="logo-sub" data-en="MINERAL PRODUCTS EXPORTER" data-am="የማዕድን ምርቶች ላኪ">MINERAL PRODUCTS EXPORTER</p>
     </div>
     <div class="desktop-nav">
         <a href="#home" class="active" data-en="Home" data-am="መነሻ">Home</a>
         <a href="#products" data-en="Products" data-am="ምርቶች">Products</a>
+        <a href="#gallery" data-en="Gallery" data-am="ማዕከለ ስዕላት">Gallery</a>
         <a href="#about" data-en="About" data-am="ስለ እኛ">About</a>
-        <a href="#gallery" data-en="Minerals" data-am="ማዕድናት">Minerals</a>
-        <a href="#contact" class="contact-btn" data-en="Contact GM" data-am="አግኙ GMን">Contact GM</a>
+        <a href="#contact" class="contact-btn" data-en="Contact" data-am="አግኙን">Contact</a>
     </div>
     <div class="lang-switch">
         <button class="lang-btn active" data-lang="en">EN</button>
@@ -511,19 +567,19 @@
 <div class="side-nav" id="sideNav">
     <button class="close-nav" id="closeNav">&times;</button>
     <div class="side-logo" style="margin-bottom: 2rem; text-align: center;">
-        <h3>ONEX <span style="color: var(--gold);">Minerals</span></h3>
-        <p style="font-size: 0.7rem;" data-en="PREMIUM EXPORTER" data-am="ከፍተኛ ላኪ">PREMIUM EXPORTER</p>
+        <h3>Ahmed Nurye <span style="color: var(--gold);">Kibret</span></h3>
+        <p style="font-size: 0.7rem;" data-en="MINERAL PRODUCTS EXPORTER" data-am="የማዕድን ምርቶች ላኪ">MINERAL PRODUCTS EXPORTER</p>
     </div>
     <ul style="list-style: none; flex: 1;">
         <li><a href="#home"><i class="fas fa-home"></i> <span data-en="Home" data-am="መነሻ">Home</span></a></li>
         <li><a href="#products"><i class="fas fa-gem"></i> <span data-en="Products" data-am="ምርቶች">Products</span></a></li>
+        <li><a href="#gallery"><i class="fas fa-image"></i> <span data-en="Gallery" data-am="ማዕከለ ስዕላት">Gallery</span></a></li>
         <li><a href="#about"><i class="fas fa-info-circle"></i> <span data-en="About" data-am="ስለ እኛ">About</span></a></li>
-        <li><a href="#gallery"><i class="fas fa-image"></i> <span data-en="Minerals" data-am="ማዕድናት">Minerals</span></a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-en="Contact GM Ahmed" data-am="አግኙ GM አህመድን">Contact GM Ahmed</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-en="Contact" data-am="አግኙን">Contact</span></a></li>
     </ul>
     <div style="margin-top: auto; padding-top: 1.5rem; font-size: 0.7rem; text-align: center;">
         <i class="fas fa-phone-alt"></i> +251-944-769694<br>
-        <small data-en="Export License #ONEX2025" data-am="የወጪ ንግድ ፈቃድ #ONEX2025">Export License #ONEX2025</small>
+        <small data-en="Export License #ANK2025" data-am="የወጪ ንግድ ፈቃድ #ANK2025">Export License #ANK2025</small>
     </div>
 </div>
 
@@ -533,22 +589,22 @@
         <div class="hero-badge" data-en="✓ Ethiopian Mineral Authority Certified" data-am="✓ በኢትዮጵያ ማዕድን ባለስልጣን የተረጋገጠ">
             ✓ Ethiopian Mineral Authority Certified
         </div>
-        <h2 data-en="Global Minerals & Precious Gemstones Exporter" data-am="ዓለም አቀፍ ማዕድናት እና ከበሩ ዕንቍ ድንጋዮች ላኪ">
-            Global Minerals &<br>Precious Gemstones Exporter
+        <h2 data-en="Premium Mineral Products & Gemstones Exporter" data-am="ከፍተኛ የማዕድን ምርቶች እና እንቁ ድንጋዮች ላኪ">
+            Premium Mineral Products &<br>Gemstones Exporter
         </h2>
         <p style="font-size: 1.2rem; max-width: 600px; margin: 1.5rem 0; color: #bcc0d0;" 
-           data-en="ONEX Fuorie Ruby, Hemat & Sand Stone — bridging industrial minerals and rare Ethiopian opal, ruby, crystal."
-           data-am="ኦኔክስ ፉዎሪ ሩቢ፣ ሄማቲት እና አሸዋ ድንጋይ — የኢንዱስትሪ ማዕድናት እና በኢትዮጵያ የሚገኙ ኦፓል፣ ሩቢ እና ክሪስታል ማገናኛ">
-            ONEX Fuorie Ruby, Hemat & Sand Stone — bridging industrial minerals and rare Ethiopian opal, ruby, crystal.
+           data-en="Ahmed Nurye Kibret - Mineral Products Exporter. Bridging Ethiopian precious gemstones and industrial minerals to global markets."
+           data-am="አህመድ ኑርዬ ክብረት - የማዕድን ምርቶች ላኪ። የኢትዮጵያን ከበሩ እንቁ ድንጋዮች እና የኢንዱስትሪ ማዕድናት ከአለም አቀፍ ገበያ ጋር ማገናኘት።">
+            Ahmed Nurye Kibret - Mineral Products Exporter. Bridging Ethiopian precious gemstones and industrial minerals to global markets.
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="#products" class="btn-gold"><i class="fas fa-gem"></i> <span data-en="Explore Collection" data-am="ምርቶችን ይመልከቱ">Explore Collection</span></a>
-            <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> <span data-en="Contact GM Ahmed Nurye" data-am="አግኙ GM አህመድ ኑርዬን">Contact GM Ahmed Nurye</span></a>
+            <a href="#products" class="btn-gold"><i class="fas fa-gem"></i> <span data-en="Explore Products" data-am="ምርቶችን ይመልከቱ">Explore Products</span></a>
+            <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> <span data-en="Contact Now" data-am="አሁን ያግኙን">Contact Now</span></a>
         </div>
         <div style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
             <div><i class="fas fa-map-marker-alt" style="color: var(--gold);"></i> <span data-en="Ethiopia, Addis Ababa" data-am="ኢትዮጵያ፣ አዲስ አበባ">Ethiopia, Addis Ababa</span></div>
-            <div><i class="fas fa-shipping-fast" style="color: var(--gold);"></i> <span data-en="Global Logistics" data-am="ዓለም አቀፍ ማጓጓዣ">Global Logistics</span></div>
-            <div><i class="fas fa-certificate" style="color: var(--gold);"></i> <span data-en="Industry Grade Quality" data-am="የኢንዱስትሪ ደረጃ ጥራት">Industry Grade Quality</span></div>
+            <div><i class="fas fa-shipping-fast" style="color: var(--gold);"></i> <span data-en="Global Shipping" data-am="ዓለም አቀፍ ማጓጓዣ">Global Shipping</span></div>
+            <div><i class="fas fa-certificate" style="color: var(--gold);"></i> <span data-en="Quality Guaranteed" data-am="ጥራት የተረጋገጠ">Quality Guaranteed</span></div>
         </div>
     </div>
 </section>
@@ -557,28 +613,28 @@
 <section id="products">
     <div class="container">
         <div style="text-align: center;">
-            <span class="hero-badge" style="border-left-color: var(--ruby); background: rgba(192,57,43,0.15);" data-en="Premium Catalogue" data-am="ከፍተኛ ደረጃ ካታሎግ">Premium Catalogue</span>
-            <h2 class="section-title section-title-center" data-en="Our Mineral & Gem Portfolio" data-am="የእኛ ማዕድናት እና እንቁ ስብስብ">Our Mineral & Gem Portfolio</h2>
+            <span class="hero-badge" style="border-left-color: var(--ruby); background: rgba(192,57,43,0.15);" data-en="Our Products" data-am="ምርቶቻችን">Our Products</span>
+            <h2 class="section-title section-title-center" data-en="Mineral & Gemstone Portfolio" data-am="የማዕድን እና እንቁ ምርቶች ስብስብ">Mineral & Gemstone Portfolio</h2>
             <p style="max-width: 680px; margin: 0 auto 2rem auto;" 
-               data-en="Industry-grade hematite, sandstone, and world-famous Ethiopian opal, ruby, crystal."
-               data-am="የኢንዱስትሪ ደረጃ ሄማቲት፣ አሸዋ ድንጋይ እና የዓለም ታዋቂ የኢትዮጵያ ኦፓል፣ ሩቢ፣ ክሪስታል">
-                Industry-grade hematite, sandstone, and world-famous Ethiopian opal, ruby, crystal.
+               data-en="Premium Ethiopian opal, ruby, crystal, hematite, sandstone and industrial minerals"
+               data-am="ከፍተኛ ጥራት ያላቸው የኢትዮጵያ ኦፓል፣ ሩቢ፣ ክሪስታል፣ ሄማቲት፣ አሸዋ ድንጋይ እና ኢንዱስትሪ ማዕድናት">
+                Premium Ethiopian opal, ruby, crystal, hematite, sandstone and industrial minerals
             </p>
         </div>
         <div class="grid-3">
             <div class="premium-card">
                 <i class="fas fa-gem" style="font-size: 2.5rem; color: var(--gold);"></i>
-                <h3 style="margin: 1rem 0 0.5rem;" data-en="Arte Opal & Crystal Opal" data-am="አርቴ ኦፓል እና ክሪስታል ኦፓል">Arte Opal & Crystal Opal</h3>
-                <p data-en="Precious Ethiopian opal with extraordinary play-of-color, crystal opal, and fire opal." data-am="ድንቅ የቀለም ጨዋታ ያለው የኢትዮጵያ ኦፓል፣ ክሪስታል ኦፓል እና ፋየር ኦፓል።">
-                    Precious Ethiopian opal with extraordinary play-of-color, crystal opal, and fire opal.
+                <h3 style="margin: 1rem 0 0.5rem;" data-en="Ethiopian Opal" data-am="የኢትዮጵያ ኦፓል">Ethiopian Opal</h3>
+                <p data-en="Precious Welo opal with extraordinary play-of-color, crystal opal, and fire opal." data-am="ድንቅ የቀለም ጨዋታ ያለው የዌሎ ኦፓል፣ ክሪስታል ኦፓል እና ፋየር ኦፓል።">
+                    Precious Welo opal with extraordinary play-of-color, crystal opal, and fire opal.
                 </p>
                 <span class="product-tag" data-en="Gemstone Grade AA" data-am="እንቁ ደረጃ AA">Gemstone Grade AA</span>
             </div>
             <div class="premium-card premium-card-ruby">
                 <i class="fas fa-dragon" style="font-size: 2.5rem; color: var(--ruby-light);"></i>
                 <h3 style="margin: 1rem 0 0.5rem;" data-en="Ruby & Hematite" data-am="ሩቢ እና ሄማቲት">Ruby & Hematite</h3>
-                <p data-en="Ethiopian Ruby (pink to red hues) and high-density Hematite for industrial uses." data-am="የኢትዮጵያ ሩቢ (ሮዝ እስከ ቀይ ቀለም) እና ለኢንዱስትሪ አገልግሎት ከፍተኛ ጥንካሬ ያለው ሄማቲት።">
-                    Ethiopian Ruby (pink to red hues) and high-density Hematite for industrial uses.
+                <p data-en="Ethiopian Ruby (pink to red hues) and high-density Hematite for industrial uses." data-am="የኢትዮጵያ ሩቢ እና ለኢንዱስትሪ አገልግሎት ከፍተኛ ጥንካሬ ያለው ሄማቲት።">
+                    Ethiopian Ruby and high-density Hematite for industrial uses.
                 </p>
                 <span class="product-tag" data-en="Certified Origin" data-am="የተረጋገጠ ምንጭ">Certified Origin</span>
             </div>
@@ -586,30 +642,30 @@
                 <i class="fas fa-mountain" style="font-size: 2.5rem; color: var(--gold);"></i>
                 <h3 style="margin: 1rem 0 0.5rem;" data-en="Sandstone & Industrial Minerals" data-am="አሸዋ ድንጋይ እና ኢንዱስትሪ ማዕድናት">Sandstone & Industrial Minerals</h3>
                 <p data-en="High-silica sandstone, kaolin, feldspar, quartz for glass, ceramics, and construction." data-am="ለመስታወት፣ ሴራሚክስ እና ግንባታ ከፍተኛ ሲሊካ አሸዋ ድንጋይ፣ ካኦሊን፣ ፌልድስፓር፣ ኳርትዝ።">
-                    High-silica sandstone, kaolin, feldspar, quartz for glass, ceramics, and construction.
+                    High-silica sandstone, kaolin, feldspar, quartz for various industries.
                 </p>
                 <span class="product-tag" data-en="Bulk Supply" data-am="በጅምላ አቅርቦት">Bulk Supply</span>
             </div>
             <div class="premium-card">
                 <i class="fas fa-crystal" style="font-size: 2.5rem; color: var(--gold);"></i>
-                <h3 style="margin: 1rem 0 0.5rem;" data-en="Arte Durve Kabret" data-am="አርቴ ዱርቬ ካብረት">Arte Durve Kabret</h3>
-                <p data-en="Specialized mineral blends and exclusive Kabret mineral products for industrial applications." data-am="ለኢንዱስትሪ አገልግሎት ልዩ የማዕድን ድብልቆች እና ልዩ የካብረት ማዕድን ምርቶች።">
-                    Specialized mineral blends and exclusive Kabret mineral products for industrial applications.
+                <h3 style="margin: 1rem 0 0.5rem;" data-en="Crystal & Quartz" data-am="ክሪስታል እና ኳርትዝ">Crystal & Quartz</h3>
+                <p data-en="High-grade crystal quartz for industrial applications and ornamental use." data-am="ለኢንዱስትሪ አፕሊኬሽን እና ለጌጣጌጥ ከፍተኛ ደረጃ ክሪስታል ኳርትዝ።">
+                    High-grade crystal quartz for industrial applications and ornamental use.
                 </p>
-                <span class="product-tag" data-en="Export Ready" data-am="ለወጪ ዝግጁ">Export Ready</span>
+                <span class="product-tag" data-en="Premium Quality" data-am="ከፍተኛ ጥራት">Premium Quality</span>
             </div>
             <div class="premium-card premium-card-ruby">
                 <i class="fas fa-tools" style="font-size: 2.5rem; color: var(--ruby-light);"></i>
-                <h3 style="margin: 1rem 0 0.5rem;" data-en="Industrial Minerals Portfolio" data-am="የኢንዱስትሪ ማዕድናት ፖርትፎሊዮ">Industrial Minerals Portfolio</h3>
-                <p data-en="Bentonite, diatomite, gypsum, and pumice for drilling, construction and agriculture." data-am="ቤንቶናይት፣ ዲያቶማይት፣ ጂፕሰም እና ፑሚስ ለቁፋሮ፣ ግንባታ እና ግብርና።">
-                    Bentonite, diatomite, gypsum, and pumice for drilling, construction and agriculture.
+                <h3 style="margin: 1rem 0 0.5rem;" data-en="Industrial Minerals" data-am="ኢንዱስትሪ ማዕድናት">Industrial Minerals</h3>
+                <p data-en="Bentonite, diatomite, gypsum, pumice, and other industrial mineral products." data-am="ቤንቶናይት፣ ዲያቶማይት፣ ጂፕሰም፣ ፑሚስ እና ሌሎች የኢንዱስትሪ ማዕድን ምርቶች።">
+                    Bentonite, diatomite, gypsum, pumice, and other industrial mineral products.
                 </p>
             </div>
             <div class="premium-card">
                 <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--gold);"></i>
-                <h3 style="margin: 1rem 0 0.5rem;" data-en="Bulk Stone Exports" data-am="በጅምላ ድንጋይ ወጪ ንግድ">Bulk Stone Exports</h3>
-                <p data-en="Huge capacity for hematite, sandstone aggregates, and dimension stones. FOB/CIF available." data-am="ለሄማቲት፣ አሸዋ ድንጋይ ድምር እና ልኬት ድንጋዮች ከፍተኛ አቅም። FOB/CIF ይገኛል።">
-                    Huge capacity for hematite, sandstone aggregates, and dimension stones. FOB/CIF available.
+                <h3 style="margin: 1rem 0 0.5rem;" data-en="Bulk Mineral Exports" data-am="የጅምላ ማዕድን ወጪ ንግድ">Bulk Mineral Exports</h3>
+                <p data-en="Large capacity exports of all mineral products. FOB/CIF terms available." data-am="የሁሉም ማዕድን ምርቶች ከፍተኛ አቅም ያለው ወጪ ንግድ። FOB/CIF ውሎች ይገኛሉ።">
+                    Large capacity exports of all mineral products. FOB/CIF terms available.
                 </p>
                 <span class="product-tag" data-en="Volume Discounts" data-am="የጅምላ ቅናሽ">Volume Discounts</span>
             </div>
@@ -617,24 +673,40 @@
     </div>
 </section>
 
+<!-- Gallery Section with Your Images -->
+<section id="gallery">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2 class="section-title section-title-center" data-en="Gemstone Gallery" data-am="የእንቁ ድንጋይ ማዕከለ ስዕላት">Gemstone Gallery</h2>
+            <p data-en="Our premium collection of Ethiopian gemstones and minerals" data-am="የኢትዮጵያ እንቁ ድንጋዮች እና ማዕድናት ስብስባችን">Our premium collection of Ethiopian gemstones and minerals</p>
+        </div>
+        <div class="grid-4" style="margin-top: 2rem;" id="galleryGrid">
+            <!-- Gallery will be populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox" id="closeLightbox">&times;</span>
+    <img id="lightboxImg" src="" alt="Full size gemstone">
+</div>
+
 <!-- About Section -->
 <section id="about" style="background: rgba(0,0,0,0.3);">
     <div class="container">
         <div class="grid-2">
             <div class="premium-card">
                 <i class="fas fa-globe-africa" style="font-size: 2.5rem; color: var(--gold);"></i>
-                <h3 style="margin: 1rem 0;" data-en="ONEX Fuorie Ruby, Hemat & Sand Stone" data-am="ኦኔክስ ፉዎሪ ሩቢ፣ ሄማቲት እና አሸዋ ድንጋይ">ONEX Fuorie Ruby, Hemat & Sand Stone</h3>
-                <p data-en="With deep roots in Ethiopia's mineral-rich regions, ONEX stands as a leading exporter of precious gemstones and industrial minerals. We combine modern extraction ethics with global supply chain standards." 
-                   data-am="በኢትዮጵያ ሀብታም ማዕድን ክልሎች ሥር ሰዶ ኦኔክስ ከፍተኛ የእንቁ ድንጋዮች እና የኢንዱስትሪ ማዕድናት ላኪ ሆኖ ቆሟል። ዘመናዊ የማውጫ ስነምግባርን ከአለም አቀፍ አቅርቦት ሰንሰለት ጋር እናጣምራለን።">
-                    With deep roots in Ethiopia's mineral-rich regions, ONEX stands as a leading exporter of precious gemstones and industrial minerals. We combine modern extraction ethics with global supply chain standards.
+                <h3 style="margin: 1rem 0;" data-en="Ahmed Nurye Kibret" data-am="አህመድ ኑርዬ ክብረት">Ahmed Nurye Kibret</h3>
+                <p data-en="With deep roots in Ethiopia's mineral-rich regions, Ahmed Nurye Kibret stands as a leading exporter of precious gemstones and industrial minerals. Combining modern extraction ethics with global supply chain standards." 
+                   data-am="በኢትዮጵያ ሀብታም ማዕድን ክልሎች ሥር ሰዶ አህመድ ኑርዬ ክብረት ከፍተኛ የእንቁ ድንጋዮች እና የኢንዱስትሪ ማዕድናት ላኪ ሆኖ ቆሟል። ዘመናዊ የማውጫ ስነምግባርን ከአለም አቀፍ አቅርቦት ሰንሰለት ጋር በማጣመር።">
+                    With deep roots in Ethiopia's mineral-rich regions, Ahmed Nurye Kibret stands as a leading exporter of precious gemstones and industrial minerals.
                 </p>
-                <p style="margin-top: 1rem;" data-en="General Manager Ahmed Nurye leads a specialized team bridging ARTE Opal Crystal, Ruby, Hematite, and Industrial solutions to Europe, Asia, Middle East and Americas."
-                   data-am="ዋና ሥራ አስኪያጅ አህመድ ኑርዬ ወደ አውሮፓ፣ እስያ፣ መካከለኛው ምስራቅ እና አሜሪካ አርቴ ኦፓል ክሪስታል፣ ሩቢ፣ ሄማቲት እና ኢንዱስትሪ መፍትሄዎችን የሚያገናኝ ልዩ ቡድን ይመራሉ።">
-                    General Manager Ahmed Nurye leads a specialized team bridging ARTE Opal Crystal, Ruby, Hematite, and Industrial solutions to Europe, Asia, Middle East and Americas.
-                </p>
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                     <span><i class="fas fa-check-circle" style="color: var(--gold);"></i> <span data-en="ISO 9001 aligned" data-am="ከISO 9001 ጋር የተስማማ">ISO 9001 aligned</span></span>
                     <span><i class="fas fa-check-circle" style="color: var(--gold);"></i> <span data-en="Responsible sourcing" data-am="ኃላፊነት የሚሰማው ምንጭ ፍለጋ">Responsible sourcing</span></span>
+                    <span><i class="fas fa-check-circle" style="color: var(--gold);"></i> <span data-en="Direct mine access" data-am="ቀጥተኛ የማዕድን መዳረሻ">Direct mine access</span></span>
                 </div>
             </div>
             <div class="grid-2" style="gap: 1rem;">
@@ -643,7 +715,7 @@
                     <p data-en="Years Experience" data-am="ዓመታት ልምድ">Years Experience</p>
                 </div>
                 <div class="premium-card" style="text-align: center;">
-                    <div class="stats-number">30+</div>
+                    <div class="stats-number">25+</div>
                     <p data-en="Global Partners" data-am="ዓለም አቀፍ አጋሮች">Global Partners</p>
                 </div>
                 <div class="premium-card" style="text-align: center;">
@@ -652,40 +724,8 @@
                 </div>
                 <div class="premium-card" style="text-align: center;">
                     <div class="stats-number">24/7</div>
-                    <p data-en="GM Support" data-am="የGM ድጋፍ">GM Support</p>
+                    <p data-en="Customer Support" data-am="የደንበኛ ድጋፍ">Customer Support</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Gallery Section -->
-<section id="gallery">
-    <div class="container">
-        <div style="text-align: center;">
-            <h2 class="section-title section-title-center" data-en="Our Premium Collection" data-am="ከፍተኛ ጥራት ያላቸው ምርቶቻችን">Our Premium Collection</h2>
-            <p data-en="Direct from Ethiopian mines to global markets" data-am="በቀጥታ ከኢትዮጵያ ማዕድን ማውጫ ወደ አለም አቀፍ ገበያዎች">Direct from Ethiopian mines to global markets</p>
-        </div>
-        <div class="grid-4" style="margin-top: 2rem;">
-            <div class="premium-card" style="text-align: center;">
-                <i class="fas fa-gem" style="font-size: 3rem; color: var(--ruby-light);"></i>
-                <h4 data-en="Ruby" data-am="ሩቢ">Ruby</h4>
-                <p style="font-size: 0.9rem;" data-en="Pigeon blood to pink hues" data-am="ከርግብ ደም እስከ ሮዝ ቀለም">Pigeon blood to pink hues</p>
-            </div>
-            <div class="premium-card" style="text-align: center;">
-                <i class="fas fa-crystal" style="font-size: 3rem; color: var(--gold);"></i>
-                <h4 data-en="Opal" data-am="ኦፓል">Opal</h4>
-                <p style="font-size: 0.9rem;" data-en="Ethiopian Welo opal" data-am="የኢትዮጵያ ዌሎ ኦፓል">Ethiopian Welo opal</p>
-            </div>
-            <div class="premium-card" style="text-align: center;">
-                <i class="fas fa-magnet" style="font-size: 3rem; color: #8B4513;"></i>
-                <h4 data-en="Hematite" data-am="ሄማቲት">Hematite</h4>
-                <p style="font-size: 0.9rem;" data-en="Industrial grade iron ore" data-am="የኢንዱስትሪ ደረጃ የብረት ማዕድን">Industrial grade iron ore</p>
-            </div>
-            <div class="premium-card" style="text-align: center;">
-                <i class="fas fa-mountain-sun" style="font-size: 3rem; color: #c2b280;"></i>
-                <h4 data-en="Sandstone" data-am="አሸዋ ድንጋይ">Sandstone</h4>
-                <p style="font-size: 0.9rem;" data-en="Construction & dimensional" data-am="ለግንባታ እና ልኬት">Construction & dimensional</p>
             </div>
         </div>
     </div>
@@ -695,16 +735,16 @@
 <section id="contact">
     <div class="container">
         <div style="text-align: center;">
-            <h2 class="section-title section-title-center" data-en="Connect with General Manager" data-am="ከዋና ሥራ አስኪያጅ ጋር ይገናኙ">Connect with General Manager</h2>
-            <p data-en="Direct inquiries for bulk orders, gemstone sourcing or industrial mineral supply" data-am="ለጅምላ ትዕዛዝ፣ የእንቁ ድንጋይ ምንጭ ፍለጋ ወይም የኢንዱስትሪ ማዕድን አቅርቦት ቀጥተኛ ጥያቄዎች">
-                Direct inquiries for bulk orders, gemstone sourcing or industrial mineral supply
+            <h2 class="section-title section-title-center" data-en="Contact Us" data-am="ያግኙን">Contact Us</h2>
+            <p data-en="Get in touch for bulk orders, gemstone sourcing or industrial mineral supply" data-am="ለጅምላ ትዕዛዝ፣ የእንቁ ድንጋይ ምንጭ ፍለጋ ወይም የኢንዱስትሪ ማዕድን አቅርቦት ያግኙን">
+                Get in touch for bulk orders, gemstone sourcing or industrial mineral supply
             </p>
         </div>
         <div class="grid-2" style="margin-top: 2rem;">
             <div class="premium-card" style="background: linear-gradient(135deg, rgba(192,57,43,0.15), rgba(26,32,38,0.9)); border-left: 4px solid var(--ruby);">
                 <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--gold);"></i>
-                <h3 style="margin: 0.5rem 0;" data-en="Ahmed Nurye" data-am="አህመድ ኑርዬ">Ahmed Nurye</h3>
-                <p><strong data-en="General Manager" data-am="ዋና ሥራ አስኪያጅ">General Manager</strong><br><span data-en="ONEX Fuorie Ruby, Hemat & Sand Stone" data-am="ኦኔክስ ፉዎሪ ሩቢ፣ ሄማቲት እና አሸዋ ድንጋይ">ONEX Fuorie Ruby, Hemat & Sand Stone</span></p>
+                <h3 style="margin: 0.5rem 0;" data-en="Ahmed Nurye Kibret" data-am="አህመድ ኑርዬ ክብረት">Ahmed Nurye Kibret</h3>
+                <p><strong data-en="Mineral Products Exporter" data-am="የማዕድን ምርቶች ላኪ">Mineral Products Exporter</strong></p>
                 <hr style="border-color: rgba(212,175,90,0.3); margin: 1rem 0;">
                 <p><i class="fas fa-phone-alt" style="color: var(--gold); width: 30px;"></i> +251-944-769694</p>
                 <p><i class="fas fa-phone-volume" style="color: var(--gold); width: 30px;"></i> +251-077-732003</p>
@@ -712,7 +752,7 @@
                 <p><i class="fas fa-map-marker-alt" style="color: var(--gold); width: 30px;"></i> <span data-en="Addis Ababa, Ethiopia" data-am="አዲስ አበባ፣ ኢትዮጵያ">Addis Ababa, Ethiopia</span></p>
             </div>
             <div class="premium-card">
-                <h3><i class="fas fa-paper-plane"></i> <span data-en="Request Quotation" data-am="የዋጋ ጥያቄ ያስገቡ">Request Quotation</span></h3>
+                <h3><i class="fas fa-paper-plane"></i> <span data-en="Send Inquiry" data-am="ጥያቄ ይላኩ">Send Inquiry</span></h3>
                 <form id="contactForm">
                     <div class="form-group">
                         <label data-en="Full Name / Company" data-am="ሙሉ ስም / ድርጅት">Full Name / Company</label>
@@ -728,14 +768,14 @@
                             <option data-en="Ruby / Opal / Crystal" data-am="ሩቢ / ኦፓል / ክሪስታል">Ruby / Opal / Crystal</option>
                             <option data-en="Hematite & Sandstone" data-am="ሄማቲት እና አሸዋ ድንጋይ">Hematite & Sandstone</option>
                             <option data-en="Industrial Minerals (Bulk)" data-am="ኢንዱስትሪ ማዕድናት (በጅምላ)">Industrial Minerals (Bulk)</option>
-                            <option data-en="Arte Durve Kabret" data-am="አርቴ ዱርቬ ካብረት">Arte Durve Kabret</option>
+                            <option data-en="Other Minerals" data-am="ሌሎች ማዕድናት">Other Minerals</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label data-en="Message / Volume Needed" data-am="መልእክት / የሚፈለገው መጠን">Message / Volume Needed</label>
                         <textarea rows="3" id="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn-gold btn-ruby" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> <span data-en="Send Inquiry to GM" data-am="ጥያቄ ወደ GM ላክ">Send Inquiry to GM</span></button>
+                    <button type="submit" class="btn-gold btn-ruby" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> <span data-en="Send Message" data-am="መልእክት ይላኩ">Send Message</span></button>
                     <div id="formFeedback" style="margin-top: 1rem; text-align: center;"></div>
                 </form>
             </div>
@@ -746,24 +786,79 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p><strong data-en="ONEX Fuorie Ruby, Hemat & Sand Stone including Industrial Minerals" data-am="ኦኔክስ ፉዎሪ ሩቢ፣ ሄማቲት እና አሸዋ ድንጋይ እንዲሁም የኢንዱስትሪ ማዕድናት">ONEX Fuorie Ruby, Hemat & Sand Stone including Industrial Minerals</strong></p>
-        <p style="margin: 0.5rem 0;" data-en="General Manager: Ahmed Nurye | +251-944-769694 | ahmednuryek123@gmail.com" data-am="ዋና ሥራ አስኪያጅ፦ አህመድ ኑርዬ | +251-944-769694 | ahmednuryek123@gmail.com">
-            General Manager: Ahmed Nurye | +251-944-769694 | ahmednuryek123@gmail.com
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: #8d9a9e;" data-en="© 2025 ONEX Minerals — Premium Gemstone & Industrial Mineral Exporter" data-am="© 2025 ኦኔክስ ማዕድናት — ከፍተኛ የእንቁ ድንጋይ እና የኢንዱስትሪ ማዕድን ላኪ">
-            © 2025 ONEX Minerals — Premium Gemstone & Industrial Mineral Exporter
+        <p><strong data-en="Ahmed Nurye Kibret - Mineral Products Exporter" data-am="አህመድ ኑርዬ ክብረት - የማዕድን ምርቶች ላኪ">Ahmed Nurye Kibret - Mineral Products Exporter</strong></p>
+        <p style="margin: 0.5rem 0;">+251-944-769694 | ahmednuryek123@gmail.com</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #8d9a9e;" data-en="© 2025 Ahmed Nurye Kibret — Premium Mineral & Gemstone Exporter" data-am="© 2025 አህመድ ኑርዬ ክብረት — ከፍተኛ የማዕድን እና የእንቁ ድንጋይ ላኪ">
+            © 2025 Ahmed Nurye Kibret — Premium Mineral & Gemstone Exporter
         </p>
     </div>
 </footer>
 
 <script>
-    // Language Toggle Functionality
+    // Gallery Images - Your provided images converted to raw URLs
+    const galleryImages = [
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/H2b8ef245936540f1be015f62bdb986f1x.jpg_300x300.jpg", title: "Premium Ruby", titleAm: "ከፍተኛ ሩቢ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/H805afefc1f8246d6aa943a41c484b9a7U.jpg_300x300.jpg", title: "Ethiopian Opal", titleAm: "የኢትዮጵያ ኦፓል" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/H9354671f8dd24342a8e013cd405da3ceJ.jpg_300x300.jpg", title: "Crystal Quartz", titleAm: "ክሪስታል ኳርትዝ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/Hb98c8f19f3634aa6a9832272c15aa13eu.jpg_300x300.jpg", title: "Raw Gemstones", titleAm: "ጥሬ እንቁዎች" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/He5cb9182d716433c90bed919c6db2c28I.jpg_300x300.jpg", title: "Hematite Mineral", titleAm: "ሄማቲት ማዕድን" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/S16f88eb1b7e349069795c1ba649bbcbf8.jpg_300x300.jpg", title: "Sandstone", titleAm: "አሸዋ ድንጋይ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/S2a1615091fca4542b916b67f4087fe33S.jpg_300x300.jpg", title: "Industrial Minerals", titleAm: "ኢንዱስትሪ ማዕድናት" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/download.webp", title: "Gemstone Collection", titleAm: "የእንቁ ስብስብ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(1).jpeg", title: "Polished Ruby", titleAm: "የተዘጋጀ ሩቢ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(2).jpeg", title: "Crystal Specimen", titleAm: "ክሪስታል ናሙና" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(3).jpeg", title: "Opal Rough", titleAm: "ጥሬ ኦፓል" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(4).jpeg", title: "Ruby Crystal", titleAm: "ሩቢ ክሪስታል" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(5).jpeg", title: "Gemstone Display", titleAm: "የእንቁ ማሳያ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(6).jpeg", title: "Mineral Collection", titleAm: "የማዕድን ስብስብ" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(7).jpeg", title: "Precious Stones", titleAm: "ከበሩ ድንጋዮች" },
+        { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images.jpeg", title: "Ethiopian Minerals", titleAm: "የኢትዮጵያ ማዕድናት" }
+    ];
+
+    // Populate gallery
+    const galleryGrid = document.getElementById('galleryGrid');
     let currentLang = 'en';
+
+    function renderGallery() {
+        galleryGrid.innerHTML = '';
+        galleryImages.forEach(img => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card';
+            card.innerHTML = `
+                <img src="${img.url}" alt="${img.title}" class="gallery-img" loading="lazy">
+                <div class="gallery-caption">
+                    <h4>${currentLang === 'en' ? img.title : img.titleAm}</h4>
+                </div>
+            `;
+            card.addEventListener('click', () => openLightbox(img.url));
+            galleryGrid.appendChild(card);
+        });
+    }
+
+    // Lightbox functions
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
     
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Language Toggle Functionality
     function updateLanguage(lang) {
         currentLang = lang;
         
-        // Update all elements with data-en and data-am attributes
         document.querySelectorAll('[data-en][data-am]').forEach(el => {
             if (lang === 'en') {
                 el.textContent = el.getAttribute('data-en');
@@ -772,7 +867,6 @@
             }
         });
         
-        // Update select options
         document.querySelectorAll('select option').forEach(option => {
             if (lang === 'en') {
                 option.textContent = option.getAttribute('data-en') || option.textContent;
@@ -781,7 +875,6 @@
             }
         });
         
-        // Update button states
         document.querySelectorAll('.lang-btn').forEach(btn => {
             if (btn.getAttribute('data-lang') === lang) {
                 btn.classList.add('active');
@@ -790,27 +883,26 @@
             }
         });
         
-        // Update HTML lang attribute
         document.documentElement.lang = lang === 'en' ? 'en' : 'am';
+        localStorage.setItem('ank_language', lang);
         
-        // Store preference
-        localStorage.setItem('onnex_language', lang);
+        // Re-render gallery with new language
+        renderGallery();
     }
     
-    // Initialize language toggle buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            updateLanguage(lang);
+            updateLanguage(btn.getAttribute('data-lang'));
         });
     });
     
-    // Load saved language preference
-    const savedLang = localStorage.getItem('onnex_language');
+    const savedLang = localStorage.getItem('ank_language');
     if (savedLang && (savedLang === 'en' || savedLang === 'am')) {
         updateLanguage(savedLang);
+    } else {
+        renderGallery();
     }
-    
+
     // Mobile Navigation
     const menuIcon = document.getElementById('menuIcon');
     const navOverlay = document.getElementById('navOverlay');
@@ -846,7 +938,7 @@
     });
 
     // Active link highlighting
-    const sections = document.querySelectorAll('#home, #products, #about, #gallery, #contact');
+    const sections = document.querySelectorAll('#home, #products, #gallery, #about, #contact');
     const navLinks = document.querySelectorAll('.desktop-nav a');
     window.addEventListener('scroll', () => {
         let current = '';
@@ -869,28 +961,19 @@
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
         
-        const errorMsgEn = 'Please fill all fields';
-        const errorMsgAm = 'እባክዎ ሁሉንም መስኮች ይሙሉ';
-        const emailErrorEn = 'Valid email required';
-        const emailErrorAm = 'ትክክለኛ ኢሜይል ያስፈልጋል';
-        const sendingEn = 'Sending to Ahmed Nurye...';
-        const sendingAm = 'ወደ አህመድ ኑርዬ በመላክ ላይ...';
-        const successEn = '✓ Inquiry sent! GM will reply within 12 hours.';
-        const successAm = '✓ ጥያቄ ተልኳል! GM በ12 ሰአት ውስጥ ምላሽ ይሰጣሉ።';
-        
         if(!name || !email || !message) {
-            feedbackDiv.innerHTML = `<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> ${currentLang === 'en' ? errorMsgEn : errorMsgAm}</div>`;
+            feedbackDiv.innerHTML = `<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> ${currentLang === 'en' ? 'Please fill all fields' : 'እባክዎ ሁሉንም መስኮች ይሙሉ'}</div>`;
             setTimeout(() => feedbackDiv.innerHTML = '', 3000);
             return;
         }
         if(!email.includes('@')) {
-            feedbackDiv.innerHTML = `<div class="alert alert-error"><i class="fas fa-envelope"></i> ${currentLang === 'en' ? emailErrorEn : emailErrorAm}</div>`;
+            feedbackDiv.innerHTML = `<div class="alert alert-error"><i class="fas fa-envelope"></i> ${currentLang === 'en' ? 'Valid email required' : 'ትክክለኛ ኢሜይል ያስፈልጋል'}</div>`;
             setTimeout(() => feedbackDiv.innerHTML = '', 3000);
             return;
         }
-        feedbackDiv.innerHTML = `<div class="alert alert-info"><i class="fas fa-spinner fa-spin"></i> ${currentLang === 'en' ? sendingEn : sendingAm}</div>`;
+        feedbackDiv.innerHTML = `<div class="alert alert-info"><i class="fas fa-spinner fa-spin"></i> ${currentLang === 'en' ? 'Sending message...' : 'መልእክት በመላክ ላይ...'}</div>`;
         setTimeout(() => {
-            feedbackDiv.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle"></i> ${currentLang === 'en' ? successEn : successAm}</div>`;
+            feedbackDiv.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle"></i> ${currentLang === 'en' ? '✓ Message sent! We will reply within 12 hours.' : '✓ መልእክት ተልኳል! በ12 ሰአት ውስጥ ምላሽ እንሰጣለን።'}</div>`;
             contactForm.reset();
             setTimeout(() => feedbackDiv.innerHTML = '', 4000);
         }, 1000);
@@ -906,14 +989,14 @@
             }
         });
     }, observerOptions);
-    document.querySelectorAll('.premium-card').forEach(card => {
+    document.querySelectorAll('.premium-card, .gallery-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(25px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
         observer.observe(card);
     });
     window.addEventListener('load', () => {
-        document.querySelectorAll('.premium-card').forEach(card => {
+        document.querySelectorAll('.premium-card, .gallery-card').forEach(card => {
             const rect = card.getBoundingClientRect();
             if(rect.top < window.innerHeight - 50) {
                 card.style.opacity = '1';
