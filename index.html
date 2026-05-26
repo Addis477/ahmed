@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ONEX | Premium Mineral & Gemstone Exporters - Ruby, Opal, Hematite</title>
+    <meta name="description" content="ONEX Fuorie Ruby, Hemat & Sand Stone - World-class industrial minerals and precious gemstone exporters. Ethiopian opal, ruby, crystal and mineral products.">
+    <meta name="keywords" content="ruby, opal, crystal, hematite, sandstone, industrial minerals, ethiopia, gemstone exporter, Ahmed Nurye">
+    <meta name="author" content="ONEX Minerals">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           ONEX MINERALS - PREMIUM GEMSTONE THEME
+           Updated from EGC Global Training Centre
+           ============================================ */
+
+        :root {
+            --gold: #d4af5a;
+            --gold-light: #e6c97e;
+            --gold-dark: #b8923e;
+            --ruby: #c0392b;
+            --ruby-light: #e74c3c;
+            --dark-bg: #0a0c0f;
+            --card-bg: rgba(26, 32, 38, 0.85);
+            --ivory: #f2ede4;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --info: #3498db;
+            --warning: #f39c12;
+            --glow: rgba(212, 175, 90, 0.4);
+            --glow-strong: rgba(212, 175, 90, 0.7);
+            --glow-ruby: rgba(192, 57, 43, 0.4);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: var(--ivory);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #121418;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+            transition: var(--transition-normal);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-light);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            border-radius: 3px;
+        }
+
+        .section-title-center {
+            text-align: center;
+            display: block;
+        }
+
+        .section-title-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 20% 30%, #0f1a1f, #050708);
+        }
+
+        /* Floating Gemstones Animation */
+        .floating-gem {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.08;
+            animation: floatGem 20s infinite ease-in-out;
+        }
+
+        @keyframes floatGem {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* Glowing Gem Icon */
+        .glowing-gem {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 8px var(--gold));
+            animation: gemPulse 2s infinite;
+        }
+
+        @keyframes gemPulse {
+            0%, 100% { filter: drop-shadow(0 0 5px var(--gold)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 20px var(--gold)); transform: scale(1.05); }
+        }
+
+        /* ============================================
+           PREMIUM CARD STYLES
+           ============================================ */
+        .premium-card {
+            background: linear-gradient(135deg, rgba(26, 32, 38, 0.9), rgba(18, 22, 28, 0.95));
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 90, 0.2);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 90, 0.08), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .premium-card:hover::before {
+            left: 100%;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 25px 45px -12px rgba(212, 175, 90, 0.3), 0 0 20px rgba(212, 175, 90, 0.15);
+        }
+
+        /* Ruby Card Variation */
+        .premium-card-ruby {
+            border: 1px solid rgba(192, 57, 43, 0.25);
+        }
+        
+        .premium-card-ruby:hover {
+            border-color: var(--ruby-light);
+            box-shadow: 0 25px 45px -12px rgba(192, 57, 43, 0.35), 0 0 20px rgba(192, 57, 43, 0.2);
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(10, 12, 15, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            border-bottom: 1px solid rgba(212, 175, 90, 0.25);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo p {
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            color: var(--gold);
+        }
+
+        .desktop-nav {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .desktop-nav a {
+            color: var(--ivory);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .desktop-nav a:hover::after,
+        .desktop-nav a.active::after {
+            width: 100%;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--gold);
+        }
+
+        .contact-btn {
+            background: var(--gold);
+            color: #000 !important;
+            padding: 0.5rem 1.3rem;
+            border-radius: 40px;
+            font-weight: 700 !important;
+        }
+
+        .contact-btn::after {
+            display: none;
+        }
+
+        .menu-icon {
+            font-size: 1.8rem;
+            color: var(--gold);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 992px) {
+            .menu-icon { display: none; }
+            .desktop-nav { display: flex; }
+        }
+
+        /* Side Navigation */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 12, 15, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(85%, 350px);
+            height: 100%;
+            background: linear-gradient(165deg, #12181f 0%, #0a0e12 100%);
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
+            z-index: 1001;
+            transition: right 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid var(--gold);
+        }
+
+        .side-nav.open {
+            right: 0;
+        }
+
+        .close-nav {
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 2rem;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        .side-logo {
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 90, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .side-logo h3 span { color: var(--gold); }
+        .side-nav ul { list-style: none; flex: 1; }
+        .side-nav li { margin: 1.2rem 0; }
+        .side-nav a {
+            color: var(--ivory);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.25s;
+        }
+        .side-nav a i { width: 28px; color: var(--gold); }
+        .side-nav a:hover { color: var(--gold); transform: translateX(8px); }
+
+        /* Buttons */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000;
+            padding: 0.9rem 2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -8px rgba(212, 175, 90, 0.5); }
+        
+        .btn-ruby {
+            background: linear-gradient(135deg, var(--ruby), var(--ruby-light));
+            color: #fff;
+        }
+        .btn-ruby:hover { box-shadow: 0 10px 25px -8px rgba(192, 57, 43, 0.5); }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-outline:hover { background: var(--gold); color: #000; transform: translateY(-3px); }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        section { padding: 5rem 0; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 3rem 0;
+        }
+        .hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 90, 0.12);
+            border-left: 4px solid var(--gold);
+            padding: 0.5rem 1.2rem;
+            border-radius: 0 30px 30px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Forms */
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--gold-light); }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 90, 0.3);
+            border-radius: 16px;
+            color: var(--ivory);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 15px rgba(212, 175, 90, 0.2);
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .alert-success { background: rgba(39, 174, 96, 0.15); border-left: 4px solid var(--success); color: #2ecc71; }
+        .alert-error { background: rgba(231, 76, 60, 0.15); border-left: 4px solid var(--error); color: #e74c3c; }
+
+        /* Footer */
+        footer {
+            background: #05080c;
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(212, 175, 90, 0.15);
+        }
+
+        /* Contact Info Card */
+        .contact-info {
+            background: linear-gradient(135deg, rgba(192, 57, 43, 0.15), rgba(26, 32, 38, 0.9));
+            border-left: 4px solid var(--ruby);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 0 1.2rem; }
+            section { padding: 3rem 0; }
+            .section-title { font-size: 2rem; }
+            .hero { min-height: 70vh; }
+            .grid-2, .grid-3, .grid-4 { gap: 1.5rem; }
+            .premium-card { padding: 1.5rem; }
+        }
+
+        /* Product tag */
+        .product-tag {
+            display: inline-block;
+            background: rgba(212, 175, 90, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-top: 1rem;
+        }
+        
+        .gm-card {
+            background: linear-gradient(135deg, rgba(212, 175, 90, 0.1), rgba(26, 32, 38, 0.95));
+        }
+        
+        .stats-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+<div class="animated-bg"></div>
+<div class="floating-gem" style="top: 10%; left: 5%;"><i class="fas fa-gem fa-3x"></i></div>
+<div class="floating-gem" style="bottom: 15%; right: 3%; animation-delay: 5s;"><i class="fas fa-crystal fa-2x"></i></div>
+
+<!-- Navigation -->
+<div class="top-bar">
+    <div class="logo">
+        <h1>ONEX<span style="color: var(--ruby);">ፊዎሪ</span></h1>
+        <p>RUBY · HEMATITE · SANDSTONE · OPAL</p>
+    </div>
+    <div class="desktop-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Minerals</a>
+        <a href="#contact" class="contact-btn">Contact GM</a>
+    </div>
+    <div class="menu-icon" id="menuIcon">
+        <i class="fas fa-gem"></i>
+    </div>
+</div>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="side-nav" id="sideNav">
+    <button class="close-nav" id="closeNav">&times;</button>
+    <div class="side-logo">
+        <h3>ONEX <span>Minerals</span></h3>
+        <p>PREMIUM EXPORTER</p>
+    </div>
+    <ul>
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#products"><i class="fas fa-gem"></i> Products</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#gallery"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact GM Ahmed</a></li>
+    </ul>
+    <div class="side-footer">
+        <i class="fas fa-phone-alt"></i> +251-944-769694<br>
+        <small>Export License #ONEX2025</small>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-badge">
+            <i class="fas fa-certificate"></i> Ethiopian Mineral Authority Certified
+        </div>
+        <h2>Global Minerals &<br>Precious Gemstones Exporter</h2>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 1.5rem 0; color: #bcc0d0;">
+            ONEX Fuorie Ruby, Hemat & Sand Stone — bridging industrial minerals and rare Ethiopian opal, ruby, crystal with world-class standards.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#products" class="btn-gold"><i class="fas fa-gem"></i> Explore Collection</a>
+            <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> Contact GM Ahmed Nurye</a>
+        </div>
+        <div style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
+            <div><i class="fas fa-map-marker-alt" style="color: var(--gold);"></i> Ethiopia, Addis Ababa</div>
+            <div><i class="fas fa-shipping-fast" style="color: var(--gold);"></i> Global Logistics</div>
+            <div><i class="fas fa-certificate" style="color: var(--gold);"></i> Industry Grade Quality</div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+    <div class="container">
+        <div style="text-align: center;">
+            <span class="hero-badge" style="border-left-color: var(--ruby); background: rgba(192,57,43,0.15);">Premium Catalogue</span>
+            <h2 class="section-title section-title-center">Our Mineral & Gem Portfolio</h2>
+            <p style="max-width: 680px; margin: 0 auto 2rem auto;">Industry-grade hematite, sandstone, industrial minerals, and world-famous Ethiopian opal, ruby, crystal.</p>
+        </div>
+        <div class="grid-3">
+            <div class="premium-card">
+                <i class="fas fa-gem" style="font-size: 2.5rem; color: var(--gold);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Arte Opal & Crystal Opal</h3>
+                <p>Precious Ethiopian opal with extraordinary play-of-color, crystal opal, and fire opal — premium quality for jewelry & investment.</p>
+                <span class="product-tag">Gemstone Grade AA</span>
+            </div>
+            <div class="premium-card premium-card-ruby">
+                <i class="fas fa-dragon" style="font-size: 2.5rem; color: var(--ruby-light);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Ruby & Hematite</h3>
+                <p>Ethiopian Ruby (pink to red hues) and high-density Hematite for industrial uses & ornamental stones.</p>
+                <span class="product-tag">Certified Origin</span>
+            </div>
+            <div class="premium-card">
+                <i class="fas fa-mountain" style="font-size: 2.5rem; color: var(--gold);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Sandstone & Industrial Minerals</h3>
+                <p>High-silica sandstone, kaolin, feldspar, quartz — tailored for glass, ceramics, and construction sectors.</p>
+                <span class="product-tag">Bulk Supply</span>
+            </div>
+            <div class="premium-card">
+                <i class="fas fa-crystal" style="font-size: 2.5rem; color: var(--gold);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Arte Durve Kabret</h3>
+                <p>Specialized mineral blends and exclusive Kabret mineral products for industrial applications.</p>
+                <span class="product-tag">Export Ready</span>
+            </div>
+            <div class="premium-card premium-card-ruby">
+                <i class="fas fa-tools" style="font-size: 2.5rem; color: var(--ruby-light);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Industrial Minerals Portfolio</h3>
+                <p>Bentonite, diatomite, gypsum, and pumice — consistent quality for drilling, construction and agriculture.</p>
+            </div>
+            <div class="premium-card">
+                <i class="fas fa-chart-line" style="font-size: 2.5rem; color: var(--gold);"></i>
+                <h3 style="margin: 1rem 0 0.5rem;">Bulk Stone Exports</h3>
+                <p>Huge capacity for hematite, sandstone aggregates, and dimension stones. Global shipping solutions (FOB/CIF).</p>
+                <span class="product-tag">Volume Discounts</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" style="background: rgba(0,0,0,0.3);">
+    <div class="container">
+        <div class="grid-2">
+            <div class="premium-card gm-card">
+                <i class="fas fa-globe-africa" style="font-size: 2.5rem; color: var(--gold);"></i>
+                <h3 style="margin: 1rem 0;">ONEX Fuorie Ruby, Hemat & Sand Stone</h3>
+                <p>With deep roots in Ethiopia's mineral-rich regions, ONEX stands as a leading exporter of precious gemstones and industrial minerals. We combine modern extraction ethics with global supply chain standards.</p>
+                <p style="margin-top: 1rem;"><strong>General Manager Ahmed Nurye</strong> leads a specialized team bridging ARTE Opal Crystal, Ruby, Hematite, and Industrial solutions to Europe, Asia, Middle East and Americas.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <span><i class="fas fa-check-circle" style="color: var(--gold);"></i> ISO 9001 aligned</span>
+                    <span><i class="fas fa-check-circle" style="color: var(--gold);"></i> Responsible sourcing</span>
+                </div>
+            </div>
+            <div class="grid-2" style="gap: 1rem;">
+                <div class="premium-card" style="text-align: center;">
+                    <div class="stats-number">15+</div>
+                    <p>Years Experience</p>
+                </div>
+                <div class="premium-card" style="text-align: center;">
+                    <div class="stats-number">30+</div>
+                    <p>Global Partners</p>
+                </div>
+                <div class="premium-card" style="text-align: center;">
+                    <div class="stats-number">100%</div>
+                    <p>Traceable Origin</p>
+                </div>
+                <div class="premium-card" style="text-align: center;">
+                    <div class="stats-number">24/7</div>
+                    <p>GM Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery / Minerals Section -->
+<section id="gallery">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2 class="section-title section-title-center">Our Premium Collection</h2>
+            <p>Direct from Ethiopian mines to global markets</p>
+        </div>
+        <div class="grid-4" style="margin-top: 2rem;">
+            <div class="premium-card" style="text-align: center;">
+                <i class="fas fa-gem glowing-gem" style="font-size: 3rem;"></i>
+                <h4>Ruby</h4>
+                <p style="font-size: 0.9rem;">Pigeon blood to pink hues</p>
+            </div>
+            <div class="premium-card" style="text-align: center;">
+                <i class="fas fa-crystal" style="font-size: 3rem; color: var(--gold);"></i>
+                <h4>Opal</h4>
+                <p style="font-size: 0.9rem;">Ethiopian Welo opal</p>
+            </div>
+            <div class="premium-card" style="text-align: center;">
+                <i class="fas fa-magnet" style="font-size: 3rem; color: #8B4513;"></i>
+                <h4>Hematite</h4>
+                <p style="font-size: 0.9rem;">Industrial grade iron ore</p>
+            </div>
+            <div class="premium-card" style="text-align: center;">
+                <i class="fas fa-mountain-sun" style="font-size: 3rem; color: #c2b280;"></i>
+                <h4>Sandstone</h4>
+                <p style="font-size: 0.9rem;">Construction & dimensional</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section with GM Info -->
+<section id="contact">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2 class="section-title section-title-center">Connect with General Manager</h2>
+            <p>Direct inquiries for bulk orders, gemstone sourcing or industrial mineral supply</p>
+        </div>
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div class="premium-card contact-info">
+                <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--gold);"></i>
+                <h3 style="margin: 0.5rem 0;">Ahmed Nurye</h3>
+                <p><strong>General Manager</strong><br>ONEX Fuorie Ruby, Hemat & Sand Stone</p>
+                <hr style="border-color: rgba(212,175,90,0.3); margin: 1rem 0;">
+                <p><i class="fas fa-phone-alt" style="color: var(--gold); width: 30px;"></i> +251-944-769694</p>
+                <p><i class="fas fa-phone-volume" style="color: var(--gold); width: 30px;"></i> +251-077-732003</p>
+                <p><i class="fas fa-envelope" style="color: var(--gold); width: 30px;"></i> ahmednuryek123@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--gold); width: 30px;"></i> Addis Ababa, Ethiopia</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.5rem;"></i>
+                    <i class="fab fa-telegram" style="color: #26A5E4; font-size: 1.5rem;"></i>
+                    <i class="fab fa-linkedin" style="color: #0A66C2; font-size: 1.5rem;"></i>
+                </div>
+            </div>
+            <div class="premium-card">
+                <h3><i class="fas fa-paper-plane"></i> Request Quotation</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Full Name / Company</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Interest</label>
+                        <select id="product">
+                            <option>Ruby / Opal / Crystal</option>
+                            <option>Hematite & Sandstone</option>
+                            <option>Industrial Minerals (Bulk)</option>
+                            <option>Arte Durve Kabret</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message / Volume Needed</label>
+                        <textarea rows="3" id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold btn-ruby" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send Inquiry to GM</button>
+                    <div id="formFeedback" style="margin-top: 1rem; text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p><strong>ONEX Fuorie Ruby, Hemat & Sand Stone including Industrial Minerals</strong></p>
+        <p style="margin: 0.5rem 0;">General Manager: Ahmed Nurye | +251-944-769694 | ahmednuryek123@gmail.com</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #8d9a9e;">© 2025 ONEX Minerals — Premium Gemstone & Industrial Mineral Exporter. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile Navigation
+    const menuIcon = document.getElementById('menuIcon');
+    const navOverlay = document.getElementById('navOverlay');
+    const sideNav = document.getElementById('sideNav');
+    const closeNav = document.getElementById('closeNav');
+
+    function openNav() {
+        sideNav.classList.add('open');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeNavFunc() {
+        sideNav.classList.remove('open');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    menuIcon.addEventListener('click', openNav);
+    closeNav.addEventListener('click', closeNavFunc);
+    navOverlay.addEventListener('click', closeNavFunc);
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if(target) {
+                e.preventDefault();
+                closeNavFunc();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Active link highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.desktop-nav a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            if(pageYOffset >= sectionTop) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const feedbackDiv = document.getElementById('formFeedback');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if(!name || !email || !message) {
+            feedbackDiv.innerHTML = '<div class="alert alert-error"><i class="fas fa-exclamation-circle"></i> Please fill all fields</div>';
+            setTimeout(() => feedbackDiv.innerHTML = '', 3000);
+            return;
+        }
+        if(!email.includes('@')) {
+            feedbackDiv.innerHTML = '<div class="alert alert-error"><i class="fas fa-envelope"></i> Valid email required</div>';
+            setTimeout(() => feedbackDiv.innerHTML = '', 3000);
+            return;
+        }
+        feedbackDiv.innerHTML = '<div class="alert alert-info"><i class="fas fa-spinner fa-spin"></i> Sending to Ahmed Nurye...</div>';
+        setTimeout(() => {
+            feedbackDiv.innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> ✓ Inquiry sent! GM will reply within 12 hours.</div>';
+            contactForm.reset();
+            setTimeout(() => feedbackDiv.innerHTML = '', 4000);
+        }, 1000);
+    });
+
+    // Intersection Observer for card animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.premium-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(25px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
+        observer.observe(card);
+    });
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.premium-card').forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 50) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+</script>
+</body>
+</html>
