@@ -33,6 +33,9 @@
             --glow: rgba(212, 175, 90, 0.4);
             --glow-ruby: rgba(192, 57, 43, 0.4);
             --transition-normal: 0.3s ease;
+            --whatsapp: #25D366;
+            --telegram: #26A5E4;
+            --imo: #6A0DAD;
         }
 
         * {
@@ -153,6 +156,46 @@
             50% { transform: translateY(-30px) rotate(10deg); }
         }
 
+        /* Hero Section with Background Image */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images%20(4).jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.25;
+            z-index: -1;
+            border-radius: 0;
+        }
+        .hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 90, 0.12);
+            border-left: 4px solid var(--gold);
+            padding: 0.5rem 1.2rem;
+            border-radius: 0 30px 30px 0;
+            margin-bottom: 1.5rem;
+        }
+
         /* Premium Cards */
         .premium-card {
             background: linear-gradient(135deg, rgba(26, 32, 38, 0.9), rgba(18, 22, 28, 0.95));
@@ -183,7 +226,7 @@
             box-shadow: 0 25px 45px -12px rgba(212, 175, 90, 0.3), 0 0 20px rgba(212, 175, 90, 0.15);
         }
 
-        /* Gallery Card - Image specific */
+        /* Gallery Card */
         .gallery-card {
             background: linear-gradient(135deg, rgba(26, 32, 38, 0.9), rgba(18, 22, 28, 0.95));
             backdrop-filter: blur(12px);
@@ -191,6 +234,7 @@
             overflow: hidden;
             border: 1px solid rgba(212, 175, 90, 0.2);
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            cursor: pointer;
         }
         .gallery-card:hover {
             transform: translateY(-8px);
@@ -210,8 +254,48 @@
             padding: 1rem;
             text-align: center;
         }
-        .gallery-caption h4 {
-            margin-bottom: 0.25rem;
+
+        /* Social Media Buttons */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .social-btn i {
+            font-size: 1.3rem;
+        }
+        .social-btn.whatsapp:hover {
+            background: var(--whatsapp);
+            border-color: var(--whatsapp);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        .social-btn.telegram:hover {
+            background: var(--telegram);
+            border-color: var(--telegram);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(38, 165, 228, 0.3);
+        }
+        .social-btn.imo:hover {
+            background: var(--imo);
+            border-color: var(--imo);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 13, 173, 0.3);
         }
 
         /* Navigation */
@@ -396,31 +480,6 @@
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 
-        /* Hero */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 3rem 0;
-        }
-        .hero h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff, var(--gold-light));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(212, 175, 90, 0.12);
-            border-left: 4px solid var(--gold);
-            padding: 0.5rem 1.2rem;
-            border-radius: 0 30px 30px 0;
-            margin-bottom: 1.5rem;
-        }
-
         /* Forms */
         .form-group { margin-bottom: 1.2rem; }
         .form-group label {
@@ -484,7 +543,7 @@
             margin-top: 1rem;
         }
 
-        /* Lightbox Styles */
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -515,10 +574,6 @@
             font-size: 3rem;
             color: var(--gold);
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .close-lightbox:hover {
-            transform: scale(1.1);
         }
 
         /* Responsive */
@@ -532,6 +587,7 @@
             .lang-switch { margin-left: 0.8rem; }
             .lang-btn { padding: 4px 10px; font-size: 0.7rem; }
             .gallery-img { height: 180px; }
+            .social-btn { padding: 6px 12px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -583,7 +639,7 @@
     </div>
 </div>
 
-<!-- Hero Section -->
+<!-- Hero Section with Background Image -->
 <section id="home" class="hero">
     <div class="container">
         <div class="hero-badge" data-en="✓ Ethiopian Mineral Authority Certified" data-am="✓ በኢትዮጵያ ማዕድን ባለስልጣን የተረጋገጠ">
@@ -601,7 +657,21 @@
             <a href="#products" class="btn-gold"><i class="fas fa-gem"></i> <span data-en="Explore Products" data-am="ምርቶችን ይመልከቱ">Explore Products</span></a>
             <a href="#contact" class="btn-outline"><i class="fas fa-phone-alt"></i> <span data-en="Contact Now" data-am="አሁን ያግኙን">Contact Now</span></a>
         </div>
-        <div style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
+        
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://wa.me/251944769694" target="_blank" class="social-btn whatsapp" data-en="WhatsApp" data-am="ዋትሳፕ">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/+251944769694" target="_blank" class="social-btn telegram" data-en="Telegram" data-am="ቴሌግራም">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://imo.im/contact/+251944769694" target="_blank" class="social-btn imo" data-en="Imo" data-am="ኢሞ">
+                <i class="fas fa-video"></i> Imo
+            </a>
+        </div>
+        
+        <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
             <div><i class="fas fa-map-marker-alt" style="color: var(--gold);"></i> <span data-en="Ethiopia, Addis Ababa" data-am="ኢትዮጵያ፣ አዲስ አበባ">Ethiopia, Addis Ababa</span></div>
             <div><i class="fas fa-shipping-fast" style="color: var(--gold);"></i> <span data-en="Global Shipping" data-am="ዓለም አቀፍ ማጓጓዣ">Global Shipping</span></div>
             <div><i class="fas fa-certificate" style="color: var(--gold);"></i> <span data-en="Quality Guaranteed" data-am="ጥራት የተረጋገጠ">Quality Guaranteed</span></div>
@@ -673,16 +743,14 @@
     </div>
 </section>
 
-<!-- Gallery Section with Your Images -->
+<!-- Gallery Section -->
 <section id="gallery">
     <div class="container">
         <div style="text-align: center;">
             <h2 class="section-title section-title-center" data-en="Gemstone Gallery" data-am="የእንቁ ድንጋይ ማዕከለ ስዕላት">Gemstone Gallery</h2>
             <p data-en="Our premium collection of Ethiopian gemstones and minerals" data-am="የኢትዮጵያ እንቁ ድንጋዮች እና ማዕድናት ስብስባችን">Our premium collection of Ethiopian gemstones and minerals</p>
         </div>
-        <div class="grid-4" style="margin-top: 2rem;" id="galleryGrid">
-            <!-- Gallery will be populated by JavaScript -->
-        </div>
+        <div class="grid-4" style="margin-top: 2rem;" id="galleryGrid"></div>
     </div>
 </section>
 
@@ -788,6 +856,11 @@
     <div class="container">
         <p><strong data-en="Ahmed Nurye Kibret - Mineral Products Exporter" data-am="አህመድ ኑርዬ ክብረት - የማዕድን ምርቶች ላኪ">Ahmed Nurye Kibret - Mineral Products Exporter</strong></p>
         <p style="margin: 0.5rem 0;">+251-944-769694 | ahmednuryek123@gmail.com</p>
+        <div class="social-links" style="justify-content: center; margin: 1rem 0;">
+            <a href="https://wa.me/251944769694" target="_blank" class="social-btn whatsapp" style="padding: 6px 15px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/+251944769694" target="_blank" class="social-btn telegram" style="padding: 6px 15px;"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="https://imo.im/contact/+251944769694" target="_blank" class="social-btn imo" style="padding: 6px 15px;"><i class="fas fa-video"></i> Imo</a>
+        </div>
         <p style="margin-top: 1rem; font-size: 0.8rem; color: #8d9a9e;" data-en="© 2025 Ahmed Nurye Kibret — Premium Mineral & Gemstone Exporter" data-am="© 2025 አህመድ ኑርዬ ክብረት — ከፍተኛ የማዕድን እና የእንቁ ድንጋይ ላኪ">
             © 2025 Ahmed Nurye Kibret — Premium Mineral & Gemstone Exporter
         </p>
@@ -795,7 +868,7 @@
 </footer>
 
 <script>
-    // Gallery Images - Your provided images converted to raw URLs
+    // Gallery Images - All your images
     const galleryImages = [
         { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/H2b8ef245936540f1be015f62bdb986f1x.jpg_300x300.jpg", title: "Premium Ruby", titleAm: "ከፍተኛ ሩቢ" },
         { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/H805afefc1f8246d6aa943a41c484b9a7U.jpg_300x300.jpg", title: "Ethiopian Opal", titleAm: "የኢትዮጵያ ኦፓል" },
@@ -815,7 +888,6 @@
         { url: "https://raw.githubusercontent.com/Addis477/ahmed/075e46635a0deb0c480d94840e3e42b99c2a5f21/images.jpeg", title: "Ethiopian Minerals", titleAm: "የኢትዮጵያ ማዕድናት" }
     ];
 
-    // Populate gallery
     const galleryGrid = document.getElementById('galleryGrid');
     let currentLang = 'en';
 
@@ -835,7 +907,7 @@
         });
     }
 
-    // Lightbox functions
+    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     
@@ -855,53 +927,33 @@
         if (e.target === lightbox) closeLightbox();
     });
 
-    // Language Toggle Functionality
+    // Language Toggle
     function updateLanguage(lang) {
         currentLang = lang;
         
         document.querySelectorAll('[data-en][data-am]').forEach(el => {
-            if (lang === 'en') {
-                el.textContent = el.getAttribute('data-en');
-            } else {
-                el.textContent = el.getAttribute('data-am');
-            }
+            el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-am');
         });
         
         document.querySelectorAll('select option').forEach(option => {
-            if (lang === 'en') {
-                option.textContent = option.getAttribute('data-en') || option.textContent;
-            } else {
-                option.textContent = option.getAttribute('data-am') || option.textContent;
-            }
+            option.textContent = lang === 'en' ? option.getAttribute('data-en') : option.getAttribute('data-am');
         });
         
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
         
         document.documentElement.lang = lang === 'en' ? 'en' : 'am';
         localStorage.setItem('ank_language', lang);
-        
-        // Re-render gallery with new language
         renderGallery();
     }
     
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            updateLanguage(btn.getAttribute('data-lang'));
-        });
+        btn.addEventListener('click', () => updateLanguage(btn.getAttribute('data-lang')));
     });
     
     const savedLang = localStorage.getItem('ank_language');
-    if (savedLang && (savedLang === 'en' || savedLang === 'am')) {
-        updateLanguage(savedLang);
-    } else {
-        renderGallery();
-    }
+    updateLanguage(savedLang && (savedLang === 'en' || savedLang === 'am') ? savedLang : 'en');
 
     // Mobile Navigation
     const menuIcon = document.getElementById('menuIcon');
@@ -979,7 +1031,7 @@
         }, 1000);
     });
 
-    // Card animations on scroll
+    // Card animations
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
